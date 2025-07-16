@@ -1,0 +1,37 @@
+<!--pages/gerenzhiliao/gerenzhiliao.wxml-->
+<view class="mainbg">
+  <!-- 背景图 -->
+  <view class="bg">
+
+  </view>
+  <!-- 用户资料部分 -->
+  <view class="userinfo">
+    <view class="daohang">
+      <view class="item usetouxlan">
+        <text>头像</text>
+        <view class="usertoux">
+          <image src="/img/sakiko.jpg" mode="" />
+        </view>
+      </view>
+      <view class="item">
+        <text>用户id</text>
+        <text>{{uid}}</text>
+      </view>
+      <view class="item">
+        <text>手机号</text>
+        <text>{{shoujihao}}</text>
+      </view>
+      <view class="item">
+        <text>昵称</text>
+        <text>{{name}}</text>
+      </view>
+      <view class="items">
+        <van-cell-group>
+          <van-field value="{{ jianjie}}" label="简介" type="textarea" placeholder="这家伙很懒，什么都没留下" autosize border="{{ false }}" custom-style="display:block;"
+          bind:change="Setjianjie" clearable bind:blur="handleBlur"/>
+        </van-cell-group>
+      </view>
+
+    </view>
+  </view>
+</view>

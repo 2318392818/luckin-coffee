@@ -1,0 +1,51 @@
+<!--pages/home/home.wxml-->
+<view class="mainbg">
+  <!-- 顶部 -->
+  <view class="top">
+    <!-- 左边 -->
+    <view class="left">
+      <text>{{times}}</text>
+      <text class="text" bind:tap="golongin">{{YHname}}</text>
+    </view>
+    <!-- 右边 -->
+    <view class="right">
+      <text class="searchinp" bind:tap="goSearch">请输入关键词</text>
+      <image class="img" src="/img/search.png" mode=""  />
+    </view>
+  </view>
+  <!-- 中间轮播图 -->
+  <view class="banner">
+    <swiper class="bannerSwiper" autoplay="true" indicator-dots="true" circular="true" indicator-active-color="#fff">
+      <swiper-item class="bannerItem" wx:for="{{bannerData}}" wx:key="index">
+        <image src="{{item.bannerImg}}" class="bannerImg" mode="" bind:tap="gogod" data-pid="{{item.pid}}" />
+
+      </swiper-item>
+
+    </swiper>
+  </view>
+
+  <!-- 下方热卖商品 -->
+  <view class="reqlist">
+    <!-- 每个商品 -->
+    <view class="shangping" wx:for="{{HotData}}" wx:key="index">
+      <!-- 商品图 -->
+      <view class="image">
+        <image src="{{item.largeImg}}" mode="" bind:tap="gogod" data-pid="{{item.pid}}" />
+      </view>
+      <!-- 热卖 -->
+      <view class="hot">热卖</view>
+      <!-- 商品中文名 -->
+      <view class="cname">
+        <text>{{item.name}}</text>
+      </view>
+      <!-- 商品英文名 -->
+      <view class="enname text">
+        <text >{{item.enname}}</text>
+      </view>
+      <!-- 商品价格 -->
+      <view class="price">
+        <text>￥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

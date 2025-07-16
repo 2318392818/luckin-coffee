@@ -1,0 +1,77 @@
+
+.main {
+  padding: 15px;
+  background-color: #f5f5f5;
+}
+
+.dizhi {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+
+}
+
+.dingdan {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.product {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.orderinfo {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.van-card {
+  margin-bottom: 10px;
+}
+
+.rule {
+  font-size: 12px;
+  color: #666;
+  position: relative;
+  top: -212rpx;
+  left: 400rpx;
+}
+
+.tongji {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.button {
+  top: 89vh;
+  left: 0;
+  position: absolute;width: 100%;
+  text-align: center;
+}
+
+.van-button {
+  width: 80%;
+  background-color: #1989fa;
+}
+
+.total{
+  color: #666;
+}
+.money{
+  color: #e4393c;
+  font-weight: 700;
+}
+.van-button--info{
+  background:rgb(12, 52, 186) !important; 
+  width: 700rpx !important;
+}

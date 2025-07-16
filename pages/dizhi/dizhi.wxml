@@ -1,0 +1,24 @@
+<!--pages/address/address.wxml-->
+<view wx:if="{{addressList.length === 0}}">
+  <view class="bg"></view>
+  <van-empty description="没有地址数据！"></van-empty>
+</view>
+<view wx:else class="mainbg">
+  <view class="address-card" wx:for="{{addressList}}" wx:key="aid">
+    <view class="left">
+      <view class="name_tel">
+        <text>{{item.name}}</text>
+        <text>{{item.tel}}</text>
+        <view wx:if="{{item.isDefault == 1}}" class="isDefault">默认</view>
+      </view>
+      <view class="addressMessage">{{item.province}}{{item.city}}{{item.county}}{{item.addressDetail}}</view>
+    </view>
+    <view class="right" bind:tap="goEditAddress" data-aid="{{item.aid}}">
+      <van-icon name="edit" />
+    </view>
+  </view>
+</view>
+<view class="addbtn">
+  <van-button type="info" size="large" color="#0C34BA" round bind:tap="goNewaddress">新增地址</van-button>
+  
+</view>

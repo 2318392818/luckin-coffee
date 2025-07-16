@@ -1,0 +1,31 @@
+<view class="main">
+  <view class="dizhi">
+  <text>选择地址></text>
+  </view>
+  <view class="dingdan">
+    <view  wx:key="index"><view class="orderinfo"><text>订单信息</text></view>
+      <view class="product"wx:for="{{shopbag}}" wx:key="index">
+      
+        <van-card 
+          num="{{item.count}}"
+          price="{{item.price}}" 
+          desc="{{item.enname}}" 
+          title="{{item.name}}" 
+          thumb="{{item.small_img}}"
+        >
+        </van-card>
+        <view><text class="rule">{{item.rule}}</text></view>
+        
+       
+        <view>
+       
+        </view>
+      </view>
+      <view class="tongji">
+        <view class="total">共计{{countSHuliang}}件商品</view>
+        <view class="money">订单金额:￥{{countGodItems}}</view>
+      </view>
+    </view>
+  </view>
+   <view class="button" bind:tap="jiesuan"><van-button round type="info">结算</van-button></view>
+</view>

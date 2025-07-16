@@ -1,0 +1,117 @@
+/* pages/god/god.wxss */
+.mainbg{
+  position: relative;
+  background-color: #f5f5f5;
+}
+.img{
+  width: 100%;
+  height: 500rpx;
+}
+.img image{
+  width: 100%;
+  height: 100%;
+}
+.introduce{
+  position: absolute;
+ 
+  z-index: 999;
+  top: 480rpx;
+  background-color: #fff;
+  width: 90%;
+  margin: 0 20rpx;
+  padding: 20rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  box-shadow: 0 30rpx 60rpx rgba(0, 0, 0, 0.1);
+}
+.title{
+  height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title .nameleft{
+  color: #444444;
+  font-size: 28rpx;
+}
+.nameleft view:nth-of-type(2){
+  color: #9d9d9d;
+  font-size: 24rpx;
+}
+.price{
+  font-weight: bold;
+  color: #e4383d;
+}
+
+.select .selectitem view:nth-of-type(2) .active {
+  color: #FFF;
+  background-color: #3763EF;
+  transition: 0.3s all linear;
+}
+
+.select {
+  font-size: 28rpx;
+}
+
+.selectitem {
+  display: flex;
+  margin-top: 4rpx;
+  align-items: center;
+}
+
+.select .selectitem view:nth-of-type(1) {
+  margin-right: 40rpx;
+  width: 10%;
+}
+
+.select .selectitem view:nth-of-type(2) {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.select .selectitem view:nth-of-type(2) text {
+  background-color: #E8E8E8;
+  color: #444;
+  padding: 10rpx 50rpx;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+}
+
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  height: 90rpx;
+  margin-top: 40rpx;
+  color: #666;
+  border: 1px solid #F5F5F5;
+  border-left: none;
+  border-right: none;
+}
+
+.desc {
+  color: #454545;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  padding-bottom: 50rpx;
+}
+
+.desc .desc_text {
+  font-size: 22rpx;
+}
+
+.desc_text text {
+  margin-top: 18rpx;
+  display: inline-block;
+  color: #666;
+}
+
+.goShop {
+  position: relative;
+  z-index: 999;
+}

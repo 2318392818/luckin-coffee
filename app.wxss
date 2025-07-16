@@ -1,0 +1,18 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.text{
+  /* 溢出隐藏 */
+  overflow: hidden;
+  /* 文字不换行 */
+  white-space: nowrap;
+  /* 溢出文字换为省略号 */
+  text-overflow: ellipsis;
+}

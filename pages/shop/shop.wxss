@@ -1,0 +1,107 @@
+longin, .mainshopbar {
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.notlogin {
+  padding-top: 200rpx;
+}
+
+
+.top image {
+  width: 100%;
+  height: 160rpx;
+}
+
+.center {
+  margin-bottom: 120rpx;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  margin: 20rpx;
+  background: white;
+  border-radius: 10rpx;
+}
+
+.product .van-card {
+  flex: 1;
+  padding: 0;
+  background: none;
+}
+
+.product .van-checkbox {
+  margin-right: 20rpx;
+}
+
+.product .van-stepper {
+ position: relative;
+ top: 50rpx;
+ right: 50rpx;
+  width:100%;
+  display: flex;
+}
+
+.rule {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.checkallbox {
+  margin-left: 20rpx;
+}
+.van-nav-bar__content{
+  
+}
+.van-submit-bar__bar{
+  margin-bottom: -70rpx !important;
+}
+
+.top {
+  position: fixed;
+  top: -100rpx;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff; /* 添加背景色避免透明 */
+}
+
+.center {
+  padding-top: 250rpx; /* 根据导航栏高度调整 */
+  padding-bottom: 100rpx;
+}
+.van-button--danger{
+  background-color: rgb(12, 52, 186) !important;
+  border: rgb(12, 52, 186) !important;
+}
+.van-nav-bar__text{
+  color: #0c34ba !important;
+}
+.van-card__desc{
+ 
+    /* 文字不换行 */
+    white-space: nowrap;
+    width: 150rpx;
+    display: flex;
+}
+.rule{
+  padding-bottom: 140rpx;
+  padding-left: 10rpx;
+  white-space: nowrap;
+  height: 32rpx;
+  display: flex;
+}
+.van-card__title{
+  white-space: nowrap !important;
+}
+.van-nav-bar{
+margin-top: 20rpx;
+}

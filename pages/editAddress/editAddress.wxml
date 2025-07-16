@@ -1,0 +1,37 @@
+<!--pages/editAddress/editAddress.wxml-->
+<view class="mainbg">
+  <!-- 姓名、电话、地区、详细地址、邮政编码 -->
+  <van-cell-group>
+    <van-field type="text" label="姓名" placeholder="姓名" border="{{ true }}" bind:input="getName" />
+    <van-field type="text" label="电话" placeholder="电话" border="{{ true }}" bind:input="getTel" />
+    <view class="item" bind:tap="showPopup">
+      <view class="left">地区</view>
+      <view class="right">{{regionText || "请选择"}}
+        <van-icon name="arrow" />
+      </view>
+    </view>
+    <van-field type="text" label="详细地址" placeholder="详细地址" border="{{ true }}" bind:input="getAddress" />
+    <van-field type="text" label="邮政编码" placeholder="邮政编码" border="{{ true }}" bind:input="getPost" />
+  </van-cell-group>
+  <!-- 设为默认收货地址 -->
+  <view class="default">
+    <view class="left">设为默认收货地址</view>
+    <view class="right">
+      <van-switch checked="{{ checked }}" bind:change="onChange" />
+    </view>
+  </view>
+  <!-- 保存按钮 -->
+  <view class="save">
+    <van-button type="info" size="large" color="#0C34BA" round bind:tap="submitAddress">保存</van-button>
+  </view>
+  <view class="delete">
+    <van-button type="default" size="large" color="#000" plain hairline round bind:tap="">删除</van-button>
+  </view>
+
+  <!-- 弹出层 -->
+  <view class="popup">
+    <van-popup show="{{ show }}" position="bottom" round custom-style="height: 50%;border-radius: 30rpx 30rpx 0 0;" bind:close="onClose" bind:cancel="onClose" close-on-click-overlay="{{ true }}">
+      <van-area area-list="{{ areaList }}" value="{{ selectedRegion }}" bind:cancel="onClose" bind:confirm="onAreaConfirm" columns-placeholder="{{ ['选择省', '选择市', '选择区/县'] }}" />
+    </van-popup>
+  </view>
+</view>

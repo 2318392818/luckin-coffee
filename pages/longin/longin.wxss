@@ -1,0 +1,99 @@
+/* pages/longin/longin.wxss */
+.mainbg {
+  /* background-color: #999999; */
+}
+
+.top {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #F7F8F9;
+  color: #444444;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.left {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left view image {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.right {
+  font-weight: bold;
+  color: #0C34BA;
+}
+
+.welcome {
+  background-color: #fff;
+  /* height: 100px;*/
+  margin-bottom: 100rpx;
+}
+
+.welcome view:nth-of-type(1) {
+  margin: 160rpx 0rpx 0rpx 20rpx;
+  font-size: 70rpx;
+  color: #444444;
+}
+
+.welcome view:nth-of-type(2) {
+  margin: 40rpx 0px 0px 20rpx;
+  font-size: 40rpx;
+  color: #9999A6;
+}
+
+.inputCell {
+  padding: 0 20rpx;
+}
+
+.forget{
+  float: right;
+  margin: 40rpx 0rpx;
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.btn {
+  margin-top: 200rpx;
+  padding: 0 20rpx;
+}
+
+.btn view:nth-of-type(2) {
+  margin-top: 80rpx;
+}
+
+.btn view:nth-of-type(2) .van-button__text {
+  color: #444444;
+}
+
+.passwordbox {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  z-index: 999;
+}
+
+.toptitle{
+  height: 60rpx;
+  font-size: 40rpx;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  color: #444444;
+}
+.zhuceBth{
+ 
+  margin:40rpx ;
+}

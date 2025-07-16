@@ -1,0 +1,80 @@
+/* pages/address/address.wxss */
+.mainbg {
+  width: 100%;
+  height: auto;
+  /* 改为自适应高度 */
+  background-color: #F5F5F5;
+  padding: 20rpx;
+  /* 添加内边距 */
+  box-sizing: border-box;
+}
+
+/* 新增地址卡片样式 */
+.address-card {
+  display: flex;
+  border-radius: 16rpx;
+  background: #fff;
+  padding: 25rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, .08);
+}
+
+.left {
+  flex: 1;
+  min-width: 0;
+  /* 防止内容溢出 */
+}
+
+.right {
+  width: 60rpx;
+  /* 压缩按钮宽度 */
+  display: grid;
+  place-items: center;
+}
+
+.name_tel {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 15rpx;
+  align-items: center;
+}
+
+.isDefault {
+  display: inline-block;
+  background: #0C34BA;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 24rpx;
+}
+
+.addressMessage {
+  color: #666;
+  font-size: 28rpx;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.bg {
+  width: 100%;
+  height: 200rpx;
+  background-color: #FFF;
+}
+
+.addbtn {
+  position: absolute;
+  bottom: 10rpx;
+ 
+  width: 80%;
+  left: 10%;
+  bottom: 2vh;
+
+}
+
+.van-button {
+  height: 75rpx !important;
+}

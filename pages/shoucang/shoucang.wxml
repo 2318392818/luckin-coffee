@@ -1,0 +1,35 @@
+<!--pages/shoucang/shoucang.wxml-->
+<view class="mainbg">
+  <!-- 背景层优化为纯色层 -->
+  <view class="bg"></view>
+  <!-- 空状态提示 -->
+  <view wx:if="{{god.length === 0}}">
+    <van-empty description="没有收藏数据！" />
+  </view>
+  <view class="shangpinginfo" wx:else>
+    <view class="reqlist">
+      <!-- 每一个商品 -->
+      <view class="shangping" wx:for="{{god}}" wx:key="index" bind:tap="goDetail" data-pid="{{item.pid}}">
+        <!-- 商品的图片 -->
+        <view class="image">
+          <image src="{{item.smallImg}}" mode="" />
+          <!-- 热卖的徽标 -->
+          <view class="hot" wx:if="{{item.isHot == 1}}">热卖</view>
+        </view>
+        <!-- 商品的中文名字 -->
+        <view class="name">
+          <text>{{item.name}}</text>
+        </view>
+        <!-- 商品的英文名 -->
+        <view class="enname text">
+          <text>{{item.enname}}</text>
+        </view>
+        <!-- 商品的价格 -->
+        <view class="price">
+          <text>¥{{item.price}}</text>
+          <image src="/img/delete.png" mode="aspectFit" catch:tap="notLike" data-pid="{{item.pid}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

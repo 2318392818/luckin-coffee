@@ -1,0 +1,41 @@
+<view class="search">
+  <van-search bind:focus="goSearch" placeholder="请输入搜索关键词" shape="round" />
+</view>
+
+<!-- 分类选择区域 -->
+<view class="menu-select">
+  <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+    <van-sidebar-item title="热卖推荐" />
+    <van-sidebar-item title="拿铁" />
+    <van-sidebar-item title="咖啡" />
+    <van-sidebar-item title="瑞纳冰" />
+    <van-sidebar-item title="水果茶" />
+  </van-sidebar>
+</view>
+
+<!-- 内容显示区域 -->
+<view class="select-content">
+  <view class="reqlist">
+    <!-- 每一个商品 -->
+    <view class="shangping" wx:for="{{menuData}}" wx:key="index" bind:tap="goDetail" data-pid="{{item.pid}}">
+      <!-- 商品的图片 -->
+      <view class="image">
+        <image src="{{item.smallImg}}" mode="" />
+        <!-- 热卖的徽标 -->
+        <view class="hot" wx:if="{{item.isHot == 1}}">热卖</view>
+      </view>
+      <!-- 商品的中文名字 -->
+      <view class="name">
+        <text>{{item.name}}</text>
+      </view>
+      <!-- 商品的英文名 -->
+      <view class="ename text">
+        <text>{{item.ename}}</text>
+      </view>
+      <!-- 商品的价格 -->
+      <view class="price">
+        <text>¥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

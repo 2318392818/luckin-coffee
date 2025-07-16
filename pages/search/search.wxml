@@ -1,0 +1,36 @@
+<!--pages/search/search.wxml-->
+<view class="mainbg">
+  <view class="top">
+    <view class="left">
+      <input type="text" placeholder="请输入关键词" value="{{inputValue}}"class="searchinp" bind:change="goSearch" />
+      <image class="img" src="/img/search.png" mode="" />
+    </view>
+    <view class="right" bind:tap="QvXiao">取消</view>
+  </view>
+  <!-- 商品 -->
+  <view class="reqlist">
+    <!-- 每个商品 -->
+    <view class="shangping" wx:for="{{searchData}}" wx:key="index">
+      <!-- 商品图 -->
+      <view class="image">
+        <image src="{{item.largeImg}}" mode="" />
+      </view>
+      
+      <!-- 商品中文名 -->
+      <view class="cname">
+        <text>{{item.name}}</text>
+      </view>
+      <!-- 商品英文名 -->
+      <view class="ename">
+        <text>{{item.enname}}</text>
+      </view>
+      <!-- 商品价格 -->
+      <view class="price">
+        <text>￥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="Wu" wx:if="{{wushangping}}">
+    <van-empty image="error" description="无内容请更换关键词" />
+  </view>
+</view>

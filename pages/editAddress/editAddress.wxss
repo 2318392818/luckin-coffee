@@ -1,0 +1,116 @@
+/* pages/editAddress/editAddress.wxss */
+/* pages/Newaddress/Newaddress.wxss */
+.mainbg {
+  width: 100%;
+  height: 950rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+}
+
+.item {
+  height: 66rpx;
+  padding: 10rpx 20rpx;
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: space-between;
+  /* 左右分布 */
+  background-color: #fff;
+  border-bottom: 1rpx solid #ebedf0;
+}
+
+.item .left {
+  margin-left: 10rpx;
+}
+
+.item .left,
+.item .right {
+  /* 文字垂直居中 */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* 字体样式保持与vant一致 */
+  font-size: 14px;
+  color: #323233;
+  /* vant默认文字色 */
+}
+
+.item .right {
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: flex-end;
+  /* 内容靠右 */
+  flex: 1;
+  /* 占据剩余空间 */
+  overflow: hidden;
+  /* 防止文本溢出 */
+  color: #c9cacd;
+  /* 右侧文字灰色 */
+}
+
+/* 箭头图标样式 */
+.item .right van-icon {
+  margin-left: 170rpx;
+  /* 文字与图标间距 */
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+/* 默认地址区域样式 */
+.default {
+  width: 100%;
+  height: 100rpx;
+  margin-top: 40rpx;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  /* 左右两侧分布 */
+  align-items: center;
+  /* 垂直居中 */
+}
+
+.default .left {
+  font-size: 30rpx;
+  /* 与vant组件字体大小一致 */
+  color: #323233;
+  /* vant默认文字色 */
+  height: 100%;
+  /* 实现文字垂直居中 */
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: flex-start;
+  /* 左对齐 */
+  padding-left: 10rpx;
+  /* 左侧留空 */
+}
+
+.default .right {
+  /* 由van-switch自动撑开宽度 */
+  display: flex;
+  align-items: center;
+  /* 确保垂直居中 */
+}
+
+/* 保存按钮区域样式 */
+.save {
+  margin-top: 65rpx;
+  width: 100%;
+}
+.delete {
+  margin-top: 35rpx;
+  width: 100%;
+}
+
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}

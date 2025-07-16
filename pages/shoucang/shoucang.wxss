@@ -1,0 +1,101 @@
+/* pages/shoucang/shoucang.wxss */
+.mainbg {
+  position: relative;
+}
+
+page {
+  background: #f5f5f5;
+}
+
+.bg {
+  width: 100%;
+  height: 256rpx;
+  background-color: #0C34BA;
+}
+
+.shangpinginfo {
+  position: absolute;
+  top: 60px;
+  left: 4%;
+  width: 92%;
+  /* height: 720rpx; */
+  /* 统一使用rpx单位 */
+  padding: 20rpx 20rpx 0 0;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border-radius: 20rpx 20rpx 0 0;
+  display: flex;
+  z-index: 100;
+}
+
+/* 商品样式 */
+.select-content {
+  position: relative;
+  top: -300px;
+  right: -70px;
+}
+
+.reqlist {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shangping {
+  width: calc((100% - 40rpx) / 2);
+  margin-left: 20rpx;
+  margin-bottom: 15rpx;
+}
+
+.image {
+  width: 100%;
+  height: 320rpx;
+  position: relative;
+  /* margin-bottom: 10px; */
+}
+
+.image image {
+  width: 100%;
+  height: 100%;
+}
+
+.hot {
+  width: 30%;
+  position: relative;
+  top: -102%;
+  right: -70%;
+  color: #fff;
+  background-color: #e4393d;
+  font-style: 10px;
+  border-bottom-left-radius: 20rpx;
+  text-align: center;
+}
+
+.shangping .name {
+  font-style: 14px;
+  margin-top: 10rpx;
+  color: #454545;
+}
+
+.shangping .enname {
+  font-style: 12px;
+  color: #999;
+  width: 100%;
+}
+
+.shangping .price {
+  position: relative;
+  font-style: 14px;
+  color: #e4383d;
+  font-weight: bold;
+}
+
+.shangping .price>image {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36rpx;
+  height: 36rpx;
+}

@@ -1,0 +1,61 @@
+<view class="mainlongin" wx:if="{{!isLongin}}">
+  <view class="notlogin">
+    <van-empty image="error" description="请先登录">
+      <van-button round type="danger" bind:tap="goLongin">去登录</van-button>
+    </van-empty>
+  </view>
+</view>
+
+<view class="mainshopbar" wx:if="{{isLongin}}">
+  <view class="top">
+    <van-nav-bar title="购物袋" left-text="返回" right-text="{{isEditMode ? '完成' : '编辑'}}"  left-arrow bind:click-left="goHome" bind:click-right="qiehuan" />
+    <view class="img">
+      <image src="/img/shopbag_bg.png" mode="aspectFit" />
+    </view>
+  </view>
+  <view class="center">
+    <view wx:for="{{shopbag}}" wx:key="sid">
+      <view class="product">
+        <van-checkbox 
+          value="{{item.checked}}" 
+          bind:change="toggleCheck" 
+          data-index="{{index}}" 
+          data-sid="{{item.sid}}"
+        />
+        <view><van-card 
+          price="{{item.price}}" 
+          desc="{{item.enname}}" 
+          title="{{item.name}}" 
+          thumb="{{item.small_img}}"
+        >
+        </van-card></view>
+        <view><text class="rule">{{item.rule}}</text></view>
+        <view class="stepper">
+        <van-stepper 
+          value="{{item.count}}" 
+          bind:change="onStepperChange" 
+          data-index="{{index}}" 
+          theme="round" 
+          button-size="40rpx" 
+          data-sid="{{item.sid}}"
+        />
+      </view>
+      </view>
+    </view>
+  </view>
+
+
+  <van-submit-bar 
+  price="{{isEditMode ? '' : totalPrice}}" 
+  button-text="{{isEditMode ? '删除选择' : '提交订单'}}" 
+  bind:submit="{{isEditMode ? 'deleteSelected' : 'onClickButton'}}"
+>
+<view class="selectAll">
+    <van-checkbox 
+      value="{{selectAll}}" 
+      bind:change="onSelectAllChange"
+      data-sid="{{item.sid}}"
+    >全选</van-checkbox></view>
+  </van-submit-bar>
+
+</view>

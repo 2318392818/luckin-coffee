@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/menu/menu",
+    "pages/shop/shop",
+    "pages/my/my",
+    "pages/search/search",
+    "pages/longin/longin",
+    "pages/god/god",
+    "pages/gerenzhiliao/gerenzhiliao",
+    "pages/dingdan/dingdan",
+    "pages/shoucang/shoucang",
+    "pages/dizhi/dizhi",
+    "pages/anquan/anquan",
+    "pages/Newaddress/Newaddress",
+    "pages/editAddress/editAddress",
+    "pages/submitorder/submitorder"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "物语咖啡商城",
+    "navigationBarBackgroundColor": "#0c33ba"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "/img/home.png",
+      "selectedIconPath": "/img/home_active.png"
+    },
+    {
+      "pagePath": "pages/menu/menu",
+      "text": "菜单",
+      "iconPath": "/img/menu.png",
+      "selectedIconPath": "/img/menu_active.png"
+    },{
+      "pagePath": "pages/shop/shop",
+      "text": "购物车",
+      "iconPath": "/img/shopbag.png",
+      "selectedIconPath": "/img/shopbag_active.png"
+    },{
+      "pagePath": "pages/my/my",
+      "text": "个人",
+      "iconPath": "/img/my.png",
+      "selectedIconPath": "/img/my_active.png"
+    }],
+    "color": "#444",
+    "selectedColor": "#0c33ba",
+    "borderStyle": "white"
+  },
+
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

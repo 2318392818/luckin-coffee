@@ -1,0 +1,89 @@
+/* pages/my/my.wxss */
+/* pages/login/login.wxss */
+.mainbg{
+  /* background-color: #999; */
+  height: 100vh;
+  position: relative;
+}
+
+.bg{
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+
+.bg image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 信息栏背景 */
+.userinfo{
+  width: 90%;
+  padding: 20rpx;
+  margin: 20rpx;
+  position: absolute;
+  top: 231rpx;
+  z-index:999;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  /* 开始渐变角度0为下到上 渐变开始效果 结束效果，渐变距离，剩下的颜色 */
+  background-image:linear-gradient(180deg,hsla(0,0%,100%,.5),hsla(0,0%,100%,.5) 50rpx,#fff 0);
+}
+/* 用户基础信息栏 */
+.usertop{
+  display: flex;
+  /* background:blue; */
+}
+/* 头像 */
+.userleft{
+  width: 20%;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #b2b2b2;
+}
+
+.userleft image{
+  width: 100%;
+  height: 100%;
+}
+/* 名称和简介 */
+.userright{
+  width: 80%;
+  margin-left: 40rpx;
+  /* background: #000; */
+}
+
+.username{
+  color: #0c34ba;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  /* background: red; */
+}
+
+.userdesc {
+  width: 100%;
+  white-space: nowrap;  /* 强制文本不换行 */
+  overflow: hidden;     /* 隐藏溢出内容 */
+  text-overflow: ellipsis; /* 溢出时显示省略号 */
+  /* background: #66ccff; */
+}
+/* 底部详细信息栏 */
+.daohang{
+  margin-top: 100rpx;
+}
+.daohang .item{
+  padding: 0rpx 40rpx;
+  display: flex;
+  justify-content: space-between;/* 子元素两边分布 */
+  height: 80rpx;
+  color: #323233;
+  font-size: 30rpx;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.daohang .item:last-child{
+  border: none;
+}

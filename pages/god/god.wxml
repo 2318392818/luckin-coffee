@@ -1,0 +1,105 @@
+<!--pages/god/god.wxml-->
+<view class="mainbg">
+  <view class="top">
+    
+    <view class="img">
+      <!-- 商品图片 -->
+      <image src="{{dataobjk.large_img}}" mode="" />
+    </view>
+
+  </view>
+  <view class="introduce">
+    <view class="title">
+      <!-- 名称信息 -->
+      <view class="nameleft">
+        <view>
+          <text>{{dataobjk.name}}</text>
+        </view>
+        <view>
+          <text>{{dataobjk.enname}}</text>
+        </view>
+      </view>
+      <view class="price">
+        <text>{{dataobjk.price}}</text>
+      </view>
+    </view>
+    <!-- 商品规格 -->
+    <view class="select">
+      <view class="selectitem" wx:if="{{tem==''?false:true}}">
+        <!-- 选项标题 -->
+        <view>
+          <text>{{dataobjk.tem_desc}}</text>
+        </view>
+        <!-- 选项 -->
+        <view>
+          <!-- 通过循环实现标签 -->
+          <!-- 储存文字和下表 -->
+          <!-- data-text="{{item}}" data-index="{{index}}" -->
+          <!-- 点击事件触发函数切换class实现标签选择 -->
+          <text wx:for="{{tem}}" wx:key="index" data-text="{{item}}" data-index="{{index}}" class="{{temindex==index?'active':''}}" bind:tap="tem">{{item}}</text>
+        </view>
+      </view>
+
+      <!-- 糖分 -->
+      <view class="selectitem" wx:if="{{sugar==''?false:true}}">
+        <view>
+          <text>{{dataobjk.sugar_desc}}</text>
+        </view>
+        <view>
+          <text wx:for="{{sugar}}" wx:key="index" data-text="{{item}}" data-index="{{index}}" class="{{sugarindex==index?'active':''}}" bind:tap="sugar">{{item}}</text>
+        </view>
+      </view>
+      <!-- 奶油 -->
+      <view class="selectitem" wx:if="{{cream==''?false:true}}">
+        <view>
+          <text>{{dataobjk.cream_desc}}</text>
+        </view>
+        <view>
+          <text wx:for="{{cream}}" wx:key="index" data-text="{{item}}" data-index="{{index}}" class="{{creamindex==index?'active':''}}" bind:tap="cream">{{item}}</text>
+        </view>
+      </view>
+      <!-- 牛奶 -->
+      <view class="selectitem" wx:if="{{milk==''?false:true}}">
+        <view>
+          <text>{{dataobjk.milk_desc}}</text>
+        </view>
+        <view>
+          <text wx:for="{{milk}}" wx:key="index" data-text="{{item}}" data-index="{{index}}" class="{{milkindex==index?'active':''}}" bind:tap="milk">{{item}}</text>
+        </view>
+      </view>
+
+    </view>
+    <!-- 选择数量 -->
+    <view class="quantity">
+    <view>
+      <text>选择数量</text>
+    </view>
+    <view>
+      <van-stepper value="{{ 1 }}"
+      theme="round" button-size="40rpx"
+      bind:change="onChange" integer />
+    </view>
+    </view>
+    <!-- 商品描述 -->
+    <view class="desc">
+      <view>
+        <text></text>
+      </view>
+      <view>
+        <view class="desc_text" wx:for="{{desc}}" wx:key="index">
+          <text>{{index+1}}、{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 购物袋加入区域 -->
+    <view class="goShop">
+      <van-goods-action>
+        <van-goods-action-icon icon="bag" text="购物袋" bind:click="goShopBag" info="{{shopNum}}" />
+        <van-goods-action-icon icon="{{like?'like':'like-o'}}" text="收藏" bind:click="onlike" info="{{likeNum}}"/>
+
+        <van-goods-action-button color="#0C34BA" text="加入购物车" bind:click="addShopBag" />
+      </van-goods-action>
+    </view>
+
+  </view>
+</view>

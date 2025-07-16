@@ -1,0 +1,221 @@
+<!--pages/dingdan/dingdan.wxml-->
+<view class="mainbg">
+  <!-- 背景图 -->
+  <view class="bg">
+  </view>
+</view>
+<!-- 订单部分 -->
+<view class="info">
+  <van-tabs animated bind:click="onClick">
+    <van-tab title="全部">
+      <view wx:for="{{processedOrders}}" wx:for-item="Orders" wx:key="index">
+        <view class="top">
+          <view class="on">
+            <view>
+              <text>订单信息</text>
+            </view>
+          </view>
+          <view class="bottem">
+            <view class="left">
+              <text>订单编号：{{Orders.orderNumber}}</text>
+            </view>
+            <view class="right">
+              <view>{{Orders.status=="2"?over:noneover}}</view>
+              <view class="clean" bind:tap="shanchu" data-oid="{{Orders.orderNumber}}" wx:if="{{Orders.status=='2'}}">
+                <image src="/img/delete.png" mode="" />
+              </view>
+              <view class="clean queren" bind:tap="queren" data-oid="{{Orders.orderNumber}}" wx:if="{{Orders.status=='1'}}">
+                  <image src="/img/queren.png" mode="" />
+                </view>
+            </view>
+          </view>
+        </view>
+        <view class="god" wx:for="{{Orders.items}}" wx:for-item="god" wx:key="index">
+
+          <view class="left">
+            <!-- 商品图 -->
+            <view class="image">
+              <image src="{{god.smallImg}}" mode="" bind:tap="gogod" />
+            </view>
+          </view>
+          <view class="right">
+            <!-- 商品中文名 -->
+            <view class="chen1">
+              <view class="cname">
+                <text>{{god.name}}</text>
+              </view>
+              <view class="rule">
+                <text>{{god.rule}}</text>
+              </view>
+            </view>
+            <!-- 商品英文名 -->
+            <view class="enname text">
+              <text>{{god.enname}}</text>
+            </view>
+            <view class="cheng3">
+              <!-- 商品价格 -->
+              <view class="price">
+                <text>￥{{god.price}}</text>
+
+              </view>
+              <!-- 商品数量 -->
+              <view class="count">
+                <text>x{{god.count}}</text>
+
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="bottom">
+          <view class="time">{{Orders.time}}</view>
+          <view class="choudibian">
+            <view class="totalQuantity">共计{{Orders.totalQuantity}}件商品</view>
+            <view class="totalPrice">订单金额：￥{{Orders.totalPrice}}</view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="未完成">
+      <view wx:for="{{processedOrders}}" wx:for-item="Orders" wx:key="index">
+        <view wx:if="{{Orders.status=='1'}}">
+          <view class="top">
+            <view class="on">
+              <view>
+                <text>订单信息</text>
+              </view>
+            </view>
+            <view class="bottem">
+              <view class="left">
+                <text>订单编号：{{Orders.orderNumber}}</text>
+              </view>
+              <view class="right">
+                <view>{{Orders.status=="2"?over:noneover}}</view>
+                <view class="clean" bind:tap="shanchu" data-oid="{{Orders.orderNumber}}" wx:if="{{Orders.status=='2'}}">
+                  <image src="/img/delete.png" mode="" />
+                </view>
+                <view class="clean" bind:tap="queren" data-oid="{{Orders.orderNumber}}" wx:if="{{Orders.status=='1'}}">
+                  <image src="/img/queren.png" mode="" />
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="god" wx:for="{{Orders.items}}" wx:for-item="god" wx:key="index">
+
+            <view class="left">
+              <!-- 商品图 -->
+              <view class="image">
+                <image src="{{god.smallImg}}" mode="" bind:tap="gogod" />
+              </view>
+            </view>
+            <view class="right">
+              <!-- 商品中文名 -->
+              <view class="chen1">
+                <view class="cname">
+                  <text>{{god.name}}</text>
+                </view>
+                <view class="rule">
+                  <text>{{god.rule}}</text>
+                </view>
+              </view>
+              <!-- 商品英文名 -->
+              <view class="enname text">
+                <text>{{god.enname}}</text>
+              </view>
+              <view class="cheng3">
+                <!-- 商品价格 -->
+                <view class="price">
+                  <text>￥{{god.price}}</text>
+
+                </view>
+                <!-- 商品数量 -->
+                <view class="count">
+                  <text>x{{god.count}}</text>
+
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="bottom">
+            <view class="time">{{Orders.time}}</view>
+            <view class="choudibian">
+              <view class="totalQuantity">共计{{Orders.totalQuantity}}件商品</view>
+              <view class="totalPrice">订单金额：￥{{Orders.totalPrice}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="已完成">
+      <view wx:for="{{processedOrders}}" wx:for-item="Orders" wx:key="index">
+        <view wx:if="{{Orders.status=='2'}}">
+          <view class="top">
+            <view class="on">
+              <view>
+                <text>订单信息</text>
+              </view>
+            </view>
+            <view class="bottem">
+              <view class="left">
+                <text>订单编号：{{Orders.orderNumber}}</text>
+              </view>
+              <view class="right">
+                <view>{{Orders.status=="2"?over:noneover}}</view>
+                <view class="clean" bind:tap="shanchu" data-oid="{{Orders.orderNumber}}" wx:if="{{Orders.status=='2'}}">
+                  <image src="/img/delete.png" mode="" />
+                </view>
+                <view class="clean" bind:tap="shanchu" data-oid="{{Orders.orderNumber}}" wx:if="{{Orders.status=='1'}}">
+                  <image src="/img/queren.png" mode="" />
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="god" wx:for="{{Orders.items}}" wx:for-item="god" wx:key="index">
+
+            <view class="left">
+              <!-- 商品图 -->
+              <view class="image">
+                <image src="{{god.smallImg}}" mode="" bind:tap="gogod" />
+              </view>
+            </view>
+            <view class="right">
+              <!-- 商品中文名 -->
+              <view class="chen1">
+                <view class="cname">
+                  <text>{{god.name}}</text>
+                </view>
+                <view class="rule">
+                  <text>{{god.rule}}</text>
+                </view>
+              </view>
+              <!-- 商品英文名 -->
+              <view class="enname text">
+                <text>{{god.enname}}</text>
+              </view>
+              <view class="cheng3">
+                <!-- 商品价格 -->
+                <view class="price">
+                  <text>￥{{god.price}}</text>
+
+                </view>
+                <!-- 商品数量 -->
+                <view class="count">
+                  <text>x{{god.count}}</text>
+
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="bottom">
+            <view class="time">{{Orders.time}}</view>
+            <view class="choudibian">
+              <view class="totalQuantity">共计{{Orders.totalQuantity}}件商品</view>
+              <view class="totalPrice">订单金额：￥{{Orders.totalPrice}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+
+</view>

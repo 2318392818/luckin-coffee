@@ -1,0 +1,39 @@
+<!--pages/anquan/anquan.wxml-->
+<view class="mainbg">
+  <view class="bg"></view>
+  <view class="info">
+    <view class="top" bind:tap="showPopup">
+      <text>修改密码</text>
+      <van-icon name="arrow" />
+    </view>
+    <view class="bottom" bind:tap="cancelAccount">
+      <text>注销账号</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+  <view class="logout">
+    <van-button type="info" size="large" color="#0C34BA" form-type="submit" round bind:tap="showLogoutConfirm">退出登录</van-button>
+  </view>
+
+  <!-- 弹出层 -->
+  <view class="popup">
+    <van-popup show="{{ show }}" position="bottom" custom-style="height:40%;" bind:close="onClose" closeable>
+      <view class="toptitle">修改密码</view>
+      <view>
+        <van-cell-group>
+          <!-- 旧密码 -->
+          <van-field value="{{oldPassword}}" label="旧密码" placeholder="输入旧密码" border="{{ true }}" type="{{showEyeOld ? 'text' : 'password'}}" right-icon="{{showEyeOld ? 'eye-o' : 'closed-eye'}}" bind:click-icon="clickEye" data-eye="old" bind:input="inpoldPassword" error-message="{{oldPasswordMessage}}" />
+          <view class="passwordbox">
+            <!-- 新密码 -->
+            <van-field value="{{newPassword}}" label="新密码" placeholder="输入新密码" border="{{ true }}" type="{{showEyeNew ? 'text' : 'password'}}" right-icon="{{showEyeNew ? 'eye-o' : 'closed-eye'}}" bind:click-icon="clickEye" data-eye="new" bind:input="inpnewPassword" error-message="{{newPasswordMessage}}" />
+          </view>
+        </van-cell-group>
+      </view>
+      <view class="confirm">
+        <view>
+          <van-button type="info" size="large" color="#0C34BA" bind:tap="Modify" round>确认修改</van-button>
+        </view>
+      </view>
+    </van-popup>
+  </view>
+</view>

@@ -1,0 +1,85 @@
+/* pages/safe/safe.wxss */
+.mainbg {
+  width: 100%;
+  height: 800rpx;
+  background-color: #F5F5F5;
+  position: relative;
+}
+
+.bg {
+  width: 100%;
+  height: 25%;
+  background-color: #0C34BA;
+}
+
+.info {
+  width: 80%;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 230rpx;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.info .top,
+.info .bottom {
+  height: 50%;
+  /* 平分info高度 */
+  padding: 10px 20px;
+  /* 上下10px 左右20px内边距 */
+  box-sizing: border-box;
+  /* 包含内边距在高度内 */
+  display: flex;
+  justify-content: space-between;
+  /* 左右对齐 */
+  align-items: center;
+  /* 垂直居中 */
+}
+
+.info .top {
+  border-bottom: 1rpx solid #eee;
+}
+
+.info .top text,
+.info .bottom text {
+  flex-grow: 1;
+  /* 文本左侧对齐 */
+}
+
+.info .top van-icon,
+.info .bottom van-icon {
+  margin-left: 10rpx;
+  /* 图标右侧对齐 */
+}
+
+.logout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+  /* 四周20px内边距 */
+  box-sizing: border-box;
+}
+
+.toptitle {
+  margin: 20rpx 0rpx 20rpx 20rpx;
+  font-size: 50rpx;
+  color: #444;
+}
+
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.confirm {
+  margin-top: 40rpx;
+  padding: 0 30rpx;
+}
